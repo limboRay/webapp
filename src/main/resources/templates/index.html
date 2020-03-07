@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org ">
+<head>
+    <title>Web Test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="webtest.css">
+</head>
+<script type="text/javascript">
+    function handleClick(lang_radio) {
+        if (lang_radio.value != '') {
+            window.location.replace('?l=' + lang_radio.value);
+        }
+    }
+</script>
+<body>
+<div class="column">
+    <form name="language_selection1"  action="#" th:action="@{/index}" th:object="${language}" method="post" align="right">
+        <select  th:field="*{choice}" onchange="handleClick(this).value" >
+            <option value=""></option>
+            <option th:each="current : ${supported}"  th:value="${current.code}" th:text="${current.code}"></option>
+
+        </select>
+    </form>
+    <h1 th:text="#{lobby.welcome}">Header</h1>
+    <div>
+
+
+        <div>
+            <h3 th:text="#{users.header} + ':'">{Here goes user table}</h3>
+            <table>
+                <tr th:each="user : ${users}">
+                    <td>
+                        👉 <span th:text="${user.firstName} + ' ' + ${user.lastName}"
+                                 th:remove="tag">{Full user name}</span>
+                        <br/><br/>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        <br/>
+
+    </div>
+</div>
+</body>
+</html>
