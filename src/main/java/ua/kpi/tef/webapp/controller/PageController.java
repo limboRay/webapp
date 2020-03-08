@@ -53,7 +53,7 @@ public class PageController implements WebMvcConfigurer {
 
 
 	@RequestMapping(value = {"/", "/index"})
-	public String lobbyPage(@ModelAttribute LanguageDTO language, Model model){
+	public String indexPage(@ModelAttribute LanguageDTO language, Model model){
 		languageSwitcher.setChoice(LocaleContextHolder.getLocale().toString());
 		model.addAttribute("language", languageSwitcher);
 		model.addAttribute("supported", languageSwitcher.getSupportedLanguages());
