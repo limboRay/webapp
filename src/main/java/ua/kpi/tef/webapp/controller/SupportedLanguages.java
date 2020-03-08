@@ -5,9 +5,7 @@ import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
 
-/**
- * Created by Anton Domin on 2020-02-11
- */
+
 
 public enum SupportedLanguages {
 	ENGLISH ("en", "English"),

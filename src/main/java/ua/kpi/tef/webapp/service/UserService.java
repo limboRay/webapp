@@ -9,9 +9,6 @@ import ua.kpi.tef.webapp.repository.UserRepository;
 
 import java.util.Optional;
 
-/**
- * Created by Anton Domin on 2020-03-05
- */
 
 @Service
 public class UserService {

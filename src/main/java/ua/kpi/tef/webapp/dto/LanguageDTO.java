@@ -5,9 +5,7 @@ import ua.kpi.tef.webapp.controller.SupportedLanguages;
 import java.util.Arrays;
 import java.util.Locale;
 
-/**
- * Created by Anton Domin on 2020-03-04
- */
+
 public class LanguageDTO {
 	private String choice;
 	private String name;

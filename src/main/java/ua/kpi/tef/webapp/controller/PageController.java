@@ -19,9 +19,7 @@ import ua.kpi.tef.webapp.service.UserService;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Created by Anton Domin on 2020-03-04
- */
+
 @Controller
 public class PageController implements WebMvcConfigurer {
 

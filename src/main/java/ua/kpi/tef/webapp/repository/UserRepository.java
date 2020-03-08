@@ -6,9 +6,7 @@ import ua.kpi.tef.webapp.entity.User;
 
 import java.util.Optional;
 
-/**
- * Created by Anton Domin on 2020-03-05
- */
+
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	Optional<User> findByEmail(String email);
