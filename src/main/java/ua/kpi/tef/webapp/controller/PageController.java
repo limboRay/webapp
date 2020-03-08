@@ -64,7 +64,7 @@ public class PageController implements WebMvcConfigurer {
 
 
 		List<User> allUsers = userService.getAllUsers().getUsers();
-		if (language.isLocaleCyrillic()){
+		if (languageSwitcher.isLocaleCyrillic()){
 			for (User user : allUsers) {
 				user.setFirstName(user.getFirstNameCyr());
 				user.setLastName(user.getLastNameCyr());
@@ -72,7 +72,7 @@ public class PageController implements WebMvcConfigurer {
 		}
 
 
-		model.addAttribute("language", language);
+		model.addAttribute("language", languageSwitcher);
 		model.addAttribute("users", allUsers);
 		return "index.html";
 	}

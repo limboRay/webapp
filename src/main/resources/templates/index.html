@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
-<html lang="en" xmlns:th="https://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="https://www.thymeleaf.org ">
+<html lang="en" xmlns:th="https://www.thymeleaf.org " xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="https://www.thymeleaf.org">
 <head>
     <title>Web Test</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="webtest.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <script type="text/javascript">
     function handleClick(lang_radio) {
@@ -15,10 +15,9 @@
 </script>
 <body>
 <div class="column">
-    <form name="language_selection1"  action="#" th:action="@{/index}" th:object="${language}" method="post" align="right">
-        <select  th:field="*{choice}" onchange="handleClick(this).value" >
-            <option value=""></option>
-            <option th:each="current : ${supported}"  th:value="${current.code}" th:text="${current.code}"></option>
+    <form name="language_selection" action="#" th:action="@{/index}" th:object="${language}" method="post" align="right">
+        <select th:field="*{choice}" onchange="handleClick(this).value"  >
+            <option th:each="current : ${supported}" th:value="${current.code}"  th:text="${current.code}"></option>
 
         </select>
     </form>
